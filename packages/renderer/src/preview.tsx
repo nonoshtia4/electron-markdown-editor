@@ -14,7 +14,7 @@ interface Props {
 
 const schema = {
   ...defaultSchema,
-  attribute: {
+  attributes: {
     ...defaultSchema.attributes,
     code: [...(defaultSchema.attributes?.code || []), 'className']
   }
@@ -32,7 +32,7 @@ const Preview: React.FC<Props> = (props) => {
       }
     })
     .processSync(props.doc).result
-  return <div className='preview markdown-body'>Preview{md}</div>
+  return <div className='preview markdown-body'>{md}</div>
 }
 
 export default Preview
